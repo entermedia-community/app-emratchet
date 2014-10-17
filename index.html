@@ -24,7 +24,8 @@
     <div class="bar bar-standard bar-header-secondary">
       <form>
         <input id='searchinput' type="search" placeholder="Search">
-        <!-- this tag must be self-closing, or it does not work -->
+        <!-- the following button tag was written as "self-closing", which is not valid HTML.
+	     this caused jAngular not to render it properly -->
         <button ng-click='entermedia.search()' style="width:80px;height:30px;">Search</button>
       </form>
     </div>
@@ -60,7 +61,8 @@
           <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
               <img class="media-object pull-left" ng-src="http://demo.entermediasoftware.com/emshare/views/modules/asset/downloads/preview/cache/{{result.sourcepath}}/image64x64.jpg" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
-            	<!-- the below bracketed reference will only work within the a tag -->
+            	<!-- the below bracketed reference will only work within the a tag
+		     if the text content is "naked" inside the div, it is not rendered -->
                 <a>{{result.name}}</a>
               <p>Lorem ipsum dolor sit amet, consectetur.</p>
             </div>
