@@ -5,6 +5,7 @@ jQuery(document).ready(function()
 
         scope.add("entermedia", em );
         jAngular.addScope("emsearch", scope);
+        jAngular.render("body", scope);
     });
 
 var Query = function() {
@@ -32,7 +33,11 @@ var EnterMedia = function(scope) {
                         function(data) {
                                 scope.results = JSON.parse(data).results;
                                 jAngular.render('#result-view', scope);
-                        }
+                        },
+                  failure:
+                  		function(data) {
+                  			console.log("FAILURE ON AJAX REQUEST: ", data);
+                  		}
             });
         }
     }

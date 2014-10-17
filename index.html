@@ -24,7 +24,8 @@
     <div class="bar bar-standard bar-header-secondary">
       <form>
         <input id='searchinput' type="search" placeholder="Search">
-        <button ng-click='scope.entermedia.search();'/>
+        <!-- this tag must be self-closing, or it does not work -->
+        <button ng-click='entermedia.search()' style="width:80px;height:30px;">Search</button>
       </form>
     </div>
 
@@ -57,9 +58,10 @@
         </li>
         <li ng-repeat="result in results" class="table-view-cell media">
           <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-              <img class="media-object pull-left" src="http://demo.entermediasoftware.com/emshare/views/modules/asset/downloads/preview/cache/{{result.sourcepath}}/image64x64.jpg" alt="Placeholder image for Skyfall's poster">
+              <img class="media-object pull-left" ng-src="http://demo.entermediasoftware.com/emshare/views/modules/asset/downloads/preview/cache/{{result.sourcepath}}/image64x64.jpg" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
-                {{result.name}}
+            	<!-- the below bracketed reference will only work within the a tag -->
+                <a>{{result.name}}</a>
               <p>Lorem ipsum dolor sit amet, consectetur.</p>
             </div>
           </a>
