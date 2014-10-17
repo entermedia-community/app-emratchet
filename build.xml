@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="zip" name="app-emratchet">
+
+	<property name="build" location="${basedir}/build" />
+	<property name="webapp" location="${basedir}/html" />
+	<property name="appname" value="${ant.project.name}" />
+	
+	<target name="zip">
+		<mkdir dir="${build}" />
+		<zip destfile="${build}/${appname}.zip">
+			<zipfileset dir="${webapp}" />
+		</zip>
+	</target>
+
+</project>
